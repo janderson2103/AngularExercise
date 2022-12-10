@@ -1,0 +1,21 @@
+
+.header {
+    border: 1px solid white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 60px;
+}
+
+.header-btn {
+    background: transparent;
+    border: 1px solid white;
+    padding: 2px 16px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+}

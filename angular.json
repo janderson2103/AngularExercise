@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "AngularExercise"
+  "defaultProject": "AngularExercise",
+  "cli": {
+    "analytics": false
+  }
 }

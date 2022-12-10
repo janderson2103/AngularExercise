@@ -1,1 +1,40 @@
-<p>converter works!</p>
+<div class="converter">
+    <form class="converter-form" [formGroup]="converterForm" (ngSubmit)="done()">
+        <div class="converter-amount">
+            <div class="input">
+                <label class="input-label" for="amount">Amount</label>
+                <input class="input-input" formControlName="amount" type="text" />
+                <span *ngIf="!converterForm?.valid">Invalid amount</span>
+            </div>
+
+            <span class="converter-detail">1 {{ displayFromCurrencyLabel() }} = {{ unitRate }} {{ displayToCurrencyLabel() }}</span>
+        </div>
+
+        <div class="converter-convert">
+            <div class="converter-convert_header">
+                <div class="select">
+                    <label class="select-label" for="from">From</label>
+                    <select class="select-select" id="from" formControlName="from">
+                        <option *ngFor="let currency of currencies" [value]="currency?.key">{{ currency?.key }}</option>
+                    </select> 
+                </div>
+
+                <img class="converter-arrow" src="../../../assets/img/arrow.jpeg" alt="">
+
+                <div class="select">
+                    <label class="select-label" for="to">To</label>
+                    <select class="select-select" id="to" formControlName="to" >
+                        <option *ngFor="let currency of currencies" [value]="currency?.key">{{ currency?.key }}</option>
+                    </select> 
+                </div>
+            </div>
+
+            <button class="btn-convert" [disabled]="!converterForm?.valid">Convert</button>
+
+            <div class="converter-more">
+                <span class="converter-more__type">{{ amountRate }} {{ displayToCurrencyLabel() }}</span>
+                <button *ngIf="!disabledFrom" class="btn-convert" (click)="onClickMoreDetails()">More details</button>
+            </div>
+        </div>    
+    </form>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Currencies } from '../constants';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  readonly USD = Currencies.USD;
+  readonly GBP = Currencies.GBP;
+  readonly EUR = Currencies.EUR;
+
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+  }
+
+  public onClick(from: string, to: string): void {
+    this.router.navigate(['detail', from, to]);
   }
 
 }
