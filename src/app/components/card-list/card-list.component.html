@@ -1,1 +1,8 @@
-<p>card-list works!</p>
+<div class="card">
+    <div class="card-item" *ngFor="let rate of rates">
+        <card 
+            [currencyName]="rate?.currencyName"
+            [currencyRate]="rate?.currencyRate">
+        </card>
+    </div>
+</div>

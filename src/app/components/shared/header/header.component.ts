@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public onClick(from: string, to: string): void {
-    this.router.navigate(['detail', from, to]);
+    this.router.navigate(['detail', from, to, 1]);
   }
 
 }

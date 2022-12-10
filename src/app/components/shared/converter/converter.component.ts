@@ -43,7 +43,6 @@ export class ConverterComponent implements OnInit {
       to: this.to,  
       amount: [this.amount, Validators.required]
     });
-
     this.calculateUnitRate();
   }
 

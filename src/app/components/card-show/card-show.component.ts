@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-show',
   templateUrl: './card-show.component.html',
   styleUrls: ['./card-show.component.css']
 })
-export class CardShowComponent implements OnInit {
+export class CardShowComponent {
 
-  constructor() { }
+  @Input() currencyName: string = '';
+  @Input() currencyRate: number = 0.0;
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
 }

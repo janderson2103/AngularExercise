@@ -22,6 +22,7 @@ export class DetailsComponent implements OnInit {
       .subscribe((params) => {
         this.to = params.to;
         this.from = params.from;
+        this.amount = params.amount;
       });
   }
 
