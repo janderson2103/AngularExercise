@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SymbolsKey } from '../shared/constants';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input() from: string = '';
+  @Input() to: string = '';
+  @Input() amount: number = 0;
 
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute) {
+  }
+
+  public ngOnInit(): void {
+    this.route.params
+      .subscribe((params) => {
+        this.to = params.to;
+        this.from = params.from;
+      });
+  }
+
+  public fromSymbolName(): string {
+    const symbols = localStorage.getItem(SymbolsKey);
+    if (symbols) {
+      const symbolObj = JSON.parse(symbols);
+      console.log (symbolObj);
+      return (symbolObj && symbolObj.hasOwnProperty(this.from) ? symbolObj[this.from] : '');
+    }
+    return '';
   }
 
 }

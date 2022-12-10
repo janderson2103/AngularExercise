@@ -4,31 +4,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { CardShowComponent } from './components/card-show/card-show.component';
-import { CardListComponent } from './components/card-list/card-list.component';
-import { HeaderComponent } from './components/shared/header/header.component';
-import { ConverterComponent } from './components/shared/converter/converter.component';
-import { DetailsComponent } from './components/details/details.component';
 import { FixerInterceptorProvider } from './interceptor/fixer.interceptor';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeModule } from './components/home/home.module';
+import { DetailsModule } from './components/details/details.module';
+import { HeaderModule } from './components/shared/header/header.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    CardShowComponent,
-    CardListComponent,
-    HeaderComponent,
-    ConverterComponent,
-    DetailsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    HomeModule,
+    DetailsModule,
+    HeaderModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FixerInterceptorProvider, multi: true }

@@ -12,7 +12,7 @@ import { Query } from 'src/app/interface/fixer';
 })
 export class ConverterComponent implements OnInit {
                     
-  @Input() from: string = Currencies.EUR;
+  @Input() from: string = Currencies.BRL;
   @Input() to: string = Currencies.USD;
   @Input() amount: number = 100;
 

@@ -1,1 +1,19 @@
-<p>details works!</p>
+
+<div class="container">
+
+    <header></header>
+  
+    <div class="container-detail">
+      <h2 class="title">{{ from }} - {{ fromSymbolName() }}</h2>
+      <button class="title-btn" type="button" [routerLink]="''">Back to home</button>
+    </div>
+  
+    <app-converter 
+      [disabledFrom]="true"
+      [from]="from"
+      [to]="to"
+      [amount]="amount"
+    ></app-converter>
+  
+  </div>
+  

@@ -1,4 +1,5 @@
 export const Currencies = {
+    BRL: 'BRL',
     USD: 'USD',
     EUR: 'EUR',
     GBP: 'GBP',
@@ -6,6 +7,7 @@ export const Currencies = {
 }
 
 export const AllowedCurrencies = [
+    { "BRL": "Brazilian Real" },
     { "USD": "United States Dollar" },
     { "GBP": "British Pound Sterling" },
     { "PEN": "Peruvian Nuevo Sol" },
