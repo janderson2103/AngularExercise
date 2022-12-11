@@ -4,6 +4,8 @@ export interface Query {
     amount?: number;
     symbols?: string;
     base?: string;
+    start_date?: string;
+    end_date?: string;
 }
 
 export interface ConvertResponse {
@@ -28,4 +30,18 @@ export interface LatestResponse {
     rates?: {
         [key: string]: number;
     };
+}
+
+export interface TimeseriesResponse {
+    success?: boolean;
+    timeseries?: boolean;
+    start_date?: Date;
+    end_date?: Date;
+    rates?: [
+        { 
+            [key: string]: {
+                [key2: string]: number
+            };
+        }
+    ];
 }

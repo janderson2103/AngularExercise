@@ -76,7 +76,7 @@ export class ConverterComponent implements OnInit {
   }
 
   public onClickMoreDetails(): void {
-    this.router.navigate(['detail', this.converterForm?.getRawValue()?.from, this.converterForm?.getRawValue()?.to]);
+    this.router.navigate(['detail', this.converterForm?.getRawValue()?.from, this.converterForm?.getRawValue()?.to,  this.converterForm?.getRawValue()?.amount]);
   }
 
   private calculateUnitRate(): void {
